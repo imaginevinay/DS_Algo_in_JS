@@ -7,3 +7,18 @@ maxSubarraySum( [4,2,1,6),1) // 6
 maxSubarraySum( [4,2,1,6,2],4) // 13
 maxSubarraySum( [], 4) // null
  */
+
+function maxSubarraySum(arr, num) {
+    let tempSum = 0;
+    let maxSum = 0;
+    if(arr.length < num)  return null;
+    for(let i = 0; i < num; i++) {
+        maxSum += arr[i]
+    }
+    tempSum = maxSum;
+    for(i = num; i < arr.length; i++) {
+        tempSum = tempSum - arr[i-num] + arr[i];
+        maxSum = Math.max(maxSum, tempSum)
+    }
+    return maxSum
+}

@@ -17,12 +17,12 @@ function isSubSequence(str1, str2) {
     if (str1.length > str2.length) {
         return false;
     }
-    let str1Index = 0;
-    for(let str2Index = 0; str2Index < str2.length; str2Index++) {
-        if(str1[str1Index] === str2[str2Index]) {
-            str1Index ++;
+    let i = 0;
+    for(let j = 0; j < str2.length; j++) {
+        if(str1[i] === str2[j]) {
+            i++;
         }
-        if(str1Index === str1.length) {
+        if(i === str1.length) {
             return true;
         }
     }

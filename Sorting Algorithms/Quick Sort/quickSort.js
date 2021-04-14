@@ -14,7 +14,8 @@ function pivotHelper(arr, start = 0, end = arr.length - 1) {
             swap(arr, i, swapIdx)
         }
     }
-    swap(arr, start, swapIdx)
+    swap(arr, start, swapIdx);
+    return swapIdx;
 }
 
 function quickSort(arr, left = 0, right = arr.length - 1) {
